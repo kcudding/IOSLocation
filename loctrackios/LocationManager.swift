@@ -15,7 +15,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var locationStatus: CLAuthorizationStatus?
     @Published var lastLocation: CLLocation?
     var lastUpdateTime: Date
-    let timeInterval: TimeInterval = 60 * 10.0 // Update time interval (seconds)
+    let timeInterval: TimeInterval = 60 * 1.0 // Update time interval (seconds)
     override init() {
         lastUpdateTime = Date.now
         super.init()
