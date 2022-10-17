@@ -22,10 +22,14 @@ struct LocationView: View {
     }
     
     @AppStorage("name") var uuid: String?
-    
-    @State private var showFirstView = true
+    @AppStorage("showFirstView") private var showFirstView = true
+
+  
     @State private var Trackok = false
     @State private var showingPopover = false
+    
+   
+    
     var body: some View {
         if showFirstView {
             Text("EULA")
@@ -35,6 +39,7 @@ struct LocationView: View {
             
             Button {
                 showFirstView = false
+                
             } label: {
                 Text("I agree")
             }
@@ -80,7 +85,38 @@ struct LocationView: View {
                     .border(Color.purple, width: 5)
                     .foregroundColor(Trackok==true ? .green : .red)
                 Image(systemName: "location")
+                
+                
             })
+            
+        
+               Link (destination: URL(string: "https://multi-plier.ca/PeerLearn.html")!){
+                    Text("Visit Our Site for more details about this project")
+                        .font(.system(size: 20))
+                        .padding()
+                        .background(Color.yellow)
+                        .foregroundColor(.white)
+                        .cornerRadius(5)
+                  }
+             
+            
+            Link (destination: URL(string: "https://multi-plier.ca/privacy.html")!){
+                 Text("More details about how we protect your privacy")
+                     .font(.system(size: 20))
+                     .padding()
+                     .background(Color.yellow)
+                     .foregroundColor(.white)
+                     .cornerRadius(5)
+               }
+            Link (destination: URL(string: "https://multi-plier.ca/EULA.html")!){
+                 Text("User agreement")
+                     .font(.system(size: 20))
+                     .padding()
+                     .background(Color.yellow)
+                     .foregroundColor(.white)
+                     .cornerRadius(5)
+               }
+            
         } else if Trackok==true {
             
             VStack {
@@ -97,6 +133,34 @@ struct LocationView: View {
                 
                     .disabled(uuid != nil)
                     Text("uuid: \(uuid ?? "not set")")
+                
+                
+                Link (destination: URL(string: "https://multi-plier.ca/PeerLearn.html")!){
+                     Text("Visit Our Site for more details about this project")
+                         .font(.system(size: 20))
+                         .padding()
+                         .background(Color.yellow)
+                         .foregroundColor(.white)
+                         .cornerRadius(5)
+                   }
+              
+             
+             Link (destination: URL(string: "https://multi-plier.ca/privacy.html")!){
+                  Text("More details about how we protect your privacy")
+                      .font(.system(size: 20))
+                      .padding()
+                      .background(Color.yellow)
+                      .foregroundColor(.white)
+                      .cornerRadius(5)
+                }
+             Link (destination: URL(string: "https://multi-plier.ca/EULA.html")!){
+                  Text("User agreement")
+                      .font(.system(size: 20))
+                      .padding()
+                      .background(Color.yellow)
+                      .foregroundColor(.white)
+                      .cornerRadius(5)
+                }
             }
         }
     }

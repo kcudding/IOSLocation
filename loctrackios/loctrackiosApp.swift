@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct loctrackiosApp: App {
+    
     var body: some Scene {
         WindowGroup {
             LocationView()

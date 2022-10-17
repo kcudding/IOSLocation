@@ -277,14 +277,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = loctrackios/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = EcoAp;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Location Is anon.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Tracking Loc.";
+				INFOPLIST_KEY_CFBundleDisplayName = PeerLearn;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We collect your anonymized data to calculate the probablily of simulated disease transmission";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We collect your anonymized data to calculate the probablily of simulated disease transmission";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,14 +311,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = loctrackios/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = EcoAp;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Location Is anon.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Tracking Loc.";
+				INFOPLIST_KEY_CFBundleDisplayName = PeerLearn;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We collect your anonymized data to calculate the probablily of simulated disease transmission";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We collect your anonymized data to calculate the probablily of simulated disease transmission";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
