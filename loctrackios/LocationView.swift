@@ -66,11 +66,42 @@ struct LocationView: View {
             
         } else if Trackok==false {
             
+            Text("PeerLearn")
+                .font(Font.largeTitle.weight(.bold))
+                .padding()
             
-            
-            
-            
-            
+            Text("This app will run in the background, and track the phone location, but your identity will not be shared. To protect your privacy, the phone will assign itself a random identity code which will be used to indicate that one or more sets of location information are from the same device.  In addition, the data file will be stored in a password protected location \n \n If you agree to participate, make sure you have location permissions set to Always allow \n")
+                .padding()
+          
+           
+            Link (destination: URL(string: "https://multi-plier.ca/PeerLearn.html")!){
+                 Text("Visit our site for more details about this project")
+                    .font(Font.title2.weight(.bold))
+                     .padding()
+                     .background(Color.yellow)
+                     .foregroundColor(.black)
+                     .cornerRadius(5)
+               }
+          
+         
+         Link (destination: URL(string: "https://multi-plier.ca/privacy.html")!){
+              Text("More details about how we protect your privacy")
+                 .font(Font.title2.weight(.bold))
+                  .padding()
+                  .background(Color.yellow)
+                  .foregroundColor(.black)
+                  .cornerRadius(5)
+            }
+         Link (destination: URL(string: "https://multi-plier.ca/EULA.html")!){
+              Text("User agreement")
+                 .font(Font.title2.weight(.bold))
+                  .padding()
+                  .background(Color.yellow)
+                  .foregroundColor(.black)
+                  .cornerRadius(5)
+            }
+            Spacer()
+        
             Button(action: { Trackok = true
                 let str = "\(Date.now.formatted().hashValue)"
                 UserDefaults.standard.set(str, forKey: "uuid")
@@ -79,6 +110,7 @@ struct LocationView: View {
                 
             }, label: {
                 Text("I agree to participate, start tracking")
+                    .font(Font.title2.weight(.bold))
                     .foregroundColor(.purple)
                     .font(.title)
                     .padding()
@@ -89,76 +121,49 @@ struct LocationView: View {
                 
             })
             
-        
-               Link (destination: URL(string: "https://multi-plier.ca/PeerLearn.html")!){
-                    Text("Visit Our Site for more details about this project")
-                        .font(.system(size: 20))
-                        .padding()
-                        .background(Color.yellow)
-                        .foregroundColor(.white)
-                        .cornerRadius(5)
-                  }
-             
-            
-            Link (destination: URL(string: "https://multi-plier.ca/privacy.html")!){
-                 Text("More details about how we protect your privacy")
-                     .font(.system(size: 20))
-                     .padding()
-                     .background(Color.yellow)
-                     .foregroundColor(.white)
-                     .cornerRadius(5)
-               }
-            Link (destination: URL(string: "https://multi-plier.ca/EULA.html")!){
-                 Text("User agreement")
-                     .font(.system(size: 20))
-                     .padding()
-                     .background(Color.yellow)
-                     .foregroundColor(.white)
-                     .cornerRadius(5)
-               }
-            
         } else if Trackok==true {
             
             VStack {
                
                 Text("Tracking")
+                    .font(Font.title2.weight(.bold))
                     .foregroundColor(.purple)
                     .font(.title)
                     .padding()
                     .border(Color.purple, width: 5)
-                Text("location status: \(locationManager.statusString)")
-                Text("latitude: \(userLatitude)")
-                Text("longitude: \(userLongitude)")
-                Text("altitude: \(userAltitude)")
+            //    Text("location status: \(locationManager.statusString)")
+            //    Text("latitude: \(userLatitude)")
+            //    Text("longitude: \(userLongitude)")
+            //    Text("altitude: \(userAltitude)")
                 
                     .disabled(uuid != nil)
-                    Text("uuid: \(uuid ?? "not set")")
+            //        Text("uuid: \(uuid ?? "not set")")
                 
                 
                 Link (destination: URL(string: "https://multi-plier.ca/PeerLearn.html")!){
-                     Text("Visit Our Site for more details about this project")
-                         .font(.system(size: 20))
+                     Text("Visit our site for more details about this project")
+                        .font(Font.title2.weight(.bold))
                          .padding()
                          .background(Color.yellow)
-                         .foregroundColor(.white)
+                         .foregroundColor(.black)
                          .cornerRadius(5)
                    }
               
              
              Link (destination: URL(string: "https://multi-plier.ca/privacy.html")!){
                   Text("More details about how we protect your privacy")
-                      .font(.system(size: 20))
+                     .font(Font.title2.weight(.bold))
                       .padding()
                       .background(Color.yellow)
-                      .foregroundColor(.white)
+                      .foregroundColor(.black)
                       .cornerRadius(5)
                 }
              Link (destination: URL(string: "https://multi-plier.ca/EULA.html")!){
                   Text("User agreement")
-                      .font(.system(size: 20))
+                     .font(Font.title2.weight(.bold))
                       .padding()
                       .background(Color.yellow)
-                      .foregroundColor(.white)
+                      .foregroundColor(.black)
                       .cornerRadius(5)
                 }
             }
