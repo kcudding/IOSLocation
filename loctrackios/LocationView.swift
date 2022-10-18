@@ -70,14 +70,15 @@ struct LocationView: View {
                 .font(Font.largeTitle.weight(.bold))
                 .padding()
             
-            Text("This app will run in the background, and track the phone location, but your identity will not be shared. To protect your privacy, the phone will assign itself a random identity code which will be used to indicate that one or more sets of location information are from the same device.  In addition, the data file will be stored in a password protected location \n \n If you agree to participate, make sure you have location permissions set to Always allow \n")
+            Text("This app will run in the background to track location, but your identity will not be shared. To protect your privacy, the phone will assign itself a random identity code. In addition, the data will be stored in a password protected location \n\n Please select 'Always allow' when prompted about running the app in the background ")
                 .padding()
-          
+                .fixedSize(horizontal: false, vertical: true)
            
             Link (destination: URL(string: "https://multi-plier.ca/PeerLearn.html")!){
                  Text("Visit our site for more details about this project")
-                    .font(Font.title2.weight(.bold))
-                     .padding()
+                    .font(Font.body.weight(.bold))
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding()
                      .background(Color.yellow)
                      .foregroundColor(.black)
                      .cornerRadius(5)
@@ -86,7 +87,8 @@ struct LocationView: View {
          
          Link (destination: URL(string: "https://multi-plier.ca/privacy.html")!){
               Text("More details about how we protect your privacy")
-                 .font(Font.title2.weight(.bold))
+                 .font(Font.body.weight(.bold))
+                 .fixedSize(horizontal: false, vertical: true)
                   .padding()
                   .background(Color.yellow)
                   .foregroundColor(.black)
@@ -94,7 +96,8 @@ struct LocationView: View {
             }
          Link (destination: URL(string: "https://multi-plier.ca/EULA.html")!){
               Text("User agreement")
-                 .font(Font.title2.weight(.bold))
+                 .font(Font.body.weight(.bold))
+                 .fixedSize(horizontal: false, vertical: true)
                   .padding()
                   .background(Color.yellow)
                   .foregroundColor(.black)
@@ -110,6 +113,7 @@ struct LocationView: View {
                 
             }, label: {
                 Text("I agree to participate, start tracking")
+                    .fixedSize(horizontal: false, vertical: true)
                     .font(Font.title2.weight(.bold))
                     .foregroundColor(.purple)
                     .font(.title)
@@ -126,7 +130,7 @@ struct LocationView: View {
             VStack {
                
                 Text("Tracking")
-                    .font(Font.title2.weight(.bold))
+                    .font(Font.title.weight(.bold))
                     .foregroundColor(.purple)
                     .font(.title)
                     .padding()
