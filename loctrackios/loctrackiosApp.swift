@@ -12,6 +12,7 @@ struct loctrackiosApp: App {
     
     var body: some Scene {
         WindowGroup {
+        
             LocationView()
         }
     }

@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B52D1FB292C0537003A7E2A /* privacy.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B52D1FA292C0537003A7E2A /* privacy.md */; };
+		3B913B422935339100D6B9D4 /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B913B412935339100D6B9D4 /* appstore.png */; };
+		3B913B442937C6E700D6B9D4 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B913B432937C6E700D6B9D4 /* ic_launcher.png */; };
+		3B9162BD2926D2E600B04B9F /* EULA.md in Resources */ = {isa = PBXBuildFile; fileRef = 3B9162BC2926D2E600B04B9F /* EULA.md */; };
+		3BCDAEEF29315AD700A8EC08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BCDAEEE29315AD700A8EC08 /* Assets.xcassets */; };
 		A202EB8F2894F95E00E27F5D /* loctrackiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A202EB8E2894F95E00E27F5D /* loctrackiosApp.swift */; };
 		A202EB912894F95E00E27F5D /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A202EB902894F95E00E27F5D /* LocationView.swift */; };
-		A202EB932894F95E00E27F5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A202EB922894F95E00E27F5D /* Assets.xcassets */; };
 		A202EB962894F95E00E27F5D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A202EB952894F95E00E27F5D /* Preview Assets.xcassets */; };
 		A202EBA02895067900E27F5D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A202EB9F2895067900E27F5D /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B52D1FA292C0537003A7E2A /* privacy.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = privacy.md; sourceTree = "<group>"; };
+		3B913B412935339100D6B9D4 /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appstore.png; sourceTree = "<group>"; };
+		3B913B432937C6E700D6B9D4 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
+		3B9162BC2926D2E600B04B9F /* EULA.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = EULA.md; sourceTree = "<group>"; };
+		3BCDAEEE29315AD700A8EC08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Downloads/AppIcons(1)/Assets.xcassets"; sourceTree = "<group>"; };
 		A202EB8B2894F95E00E27F5D /* loctrackios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loctrackios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A202EB8E2894F95E00E27F5D /* loctrackiosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loctrackiosApp.swift; sourceTree = "<group>"; };
 		A202EB902894F95E00E27F5D /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
-		A202EB922894F95E00E27F5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A202EB952894F95E00E27F5D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A202EB9C289501AC00E27F5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A202EB9F2895067900E27F5D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -55,11 +63,15 @@
 			isa = PBXGroup;
 			children = (
 				A202EB9C289501AC00E27F5D /* Info.plist */,
+				3B9162BC2926D2E600B04B9F /* EULA.md */,
+				3B52D1FA292C0537003A7E2A /* privacy.md */,
 				A202EB8E2894F95E00E27F5D /* loctrackiosApp.swift */,
 				A202EB902894F95E00E27F5D /* LocationView.swift */,
-				A202EB922894F95E00E27F5D /* Assets.xcassets */,
 				A202EB942894F95E00E27F5D /* Preview Content */,
 				A202EB9F2895067900E27F5D /* LocationManager.swift */,
+				3BCDAEEE29315AD700A8EC08 /* Assets.xcassets */,
+				3B913B412935339100D6B9D4 /* appstore.png */,
+				3B913B432937C6E700D6B9D4 /* ic_launcher.png */,
 			);
 			path = loctrackios;
 			sourceTree = "<group>";
@@ -130,8 +142,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B913B422935339100D6B9D4 /* appstore.png in Resources */,
+				3B913B442937C6E700D6B9D4 /* ic_launcher.png in Resources */,
+				3B9162BD2926D2E600B04B9F /* EULA.md in Resources */,
 				A202EB962894F95E00E27F5D /* Preview Assets.xcassets in Resources */,
-				A202EB932894F95E00E27F5D /* Assets.xcassets in Resources */,
+				3B52D1FB292C0537003A7E2A /* privacy.md in Resources */,
+				3BCDAEEF29315AD700A8EC08 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,11 +294,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = loctrackios/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PeerLearn;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We collect your anonymized data to calculate the probablily of simulated disease transmission";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We collect your anonymized data to calculate the probablily of simulated disease transmission";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app tracks location for a fixed period of time, in order to simulate disease dynamics for a teaching exercise";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app tracks location for a fixed period of time, in order to simulate disease dynamics for a teaching exercise";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -312,11 +327,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = loctrackios/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PeerLearn;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We collect your anonymized data to calculate the probablily of simulated disease transmission";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We collect your anonymized data to calculate the probablily of simulated disease transmission";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app tracks location for a fixed period of time, in order to simulate disease dynamics for a teaching exercise";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app tracks location for a fixed period of time, in order to simulate disease dynamics for a teaching exercise";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
