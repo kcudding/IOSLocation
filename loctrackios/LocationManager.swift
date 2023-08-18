@@ -21,6 +21,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     var pausesLocationUpdatesAutomatically = false
     var showsBackgroundLocationIndicator = true
     var distanceFilter = 15
+    var firstlocate: Bool = true
     
     var locationStatus:CLAuthorizationStatus?{
         didSet{
@@ -36,7 +37,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     let startdate = DateComponents(calendar: Calendar.current, timeZone: TimeZone(abbreviation: "UTC"), year: 2023, month: 08, day: 08, hour: 23, minute: 59, second: 59).date!
     let enddate = DateComponents(calendar: Calendar.current, timeZone: TimeZone(abbreviation: "UTC"), year: 2023, month: 11, day: 30, hour: 24, minute: 59, second: 59).date!
-    let timeInterval: TimeInterval = 60 * 20.0 // Update time interval (seconds)
+    let timeInterval: TimeInterval = 60 * 15.0 // Update time interval (seconds)
     
   
     override init() {
@@ -48,7 +49,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         locationManager.activityType = .other
         locationManager.pausesLocationUpdatesAutomatically = false
         locationManager.allowsBackgroundLocationUpdates = true
-        locationManager.distanceFilter = 10
+        locationManager.distanceFilter = 15
         locationManager.showsBackgroundLocationIndicator = true
         
         if (startdate...enddate).contains(lastUpdateTime) {
@@ -60,6 +61,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
            
         if locperm && indates {
             locationManager.startUpdatingLocation()
+            
         } else {
             locationManager.stopUpdatingLocation()
             }
@@ -89,36 +91,67 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         locationManager.requestAlwaysAuthorization() // Always need location
     }
     
-  
+    // Delegate method to check authorization status and request "When In Use" authorization
+       func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+           let status = locationManager.authorizationStatus
+           locationStatus = status
+           print(#function, statusString)
+           switch status {
+           case .authorizedAlways:
+               if indates {
+                   locationManager.startUpdatingLocation()
+               }
+               break
+           case .authorizedWhenInUse:
+               locationManager.requestAlwaysAuthorization()
+               if indates {
+                   locationManager.startUpdatingLocation()
+               }
+            
+               break
+           case .restricted, .denied:
+               locperm = false
+               locationManager.stopUpdatingLocation()
+               break
+           case .notDetermined:
+               locationManager.requestAlwaysAuthorization()
+               break
+           @unknown default:
+               break
+           }
+           
+       }
+       
+
      
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        locationStatus = status
-        print(#function, statusString)
-        switch status {
-        case .authorizedAlways:
-            if indates {
-                locationManager.startUpdatingLocation()
-            }
-            break
-        case .authorizedWhenInUse:
-            locationManager.requestAlwaysAuthorization()
-            if indates {
-                locationManager.startUpdatingLocation()
-            }
+   // func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+     //   locationStatus = status
+       // print(#function, statusString)
+       // switch status {
+       // case .authorizedAlways:
+         //   if indates {
+           //     locationManager.startUpdatingLocation()
+      //      }
+        //    break
+       // case .authorizedWhenInUse:
+         //   locationManager.requestAlwaysAuthorization()
+         //   if indates {
+    //            locationManager.startUpdatingLocation()
+      //      }
          
-            break
-        case .restricted, .denied:
-            locperm = false
-            locationManager.stopUpdatingLocation()
-            break
-        case .notDetermined:
-            locationManager.requestAlwaysAuthorization()
-            break
-        @unknown default:
-            break
-        }
-        
-    }
+        //    break
+       // case .restricted, .denied:
+         //   locperm = false
+         //   locationManager.stopUpdatingLocation()
+           // break
+     //   case .notDetermined:
+       //     locationManager.requestAlwaysAuthorization()
+         //   break
+       // @unknown default:
+         //   break
+       // }
+     
+  //  }
     
     func sendRequest(long: Double, lat: Double, alt: Double, lastUpdateTime: Date) -> Date{
         let time = Date.now
@@ -150,8 +183,15 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         //sendRequest(long: long, lat: lat, alt: alt)
         let delta = Date.now.timeIntervalSince1970 - lastUpdateTime.timeIntervalSince1970
         print(#function, "Time Since last update: \(delta)s")
-        if(delta > timeInterval){ // Update every interval seconds
+        if (firstlocate) { lastUpdateTime = sendRequest(long: long, lat: lat, alt: alt, lastUpdateTime: lastUpdateTime)
+            print(#function, lastUpdateTime)
+            firstlocate = false
+            
+        }
+        
+        else if(delta > timeInterval){ // Update every interval seconds
             lastUpdateTime = sendRequest(long: long, lat: lat, alt: alt, lastUpdateTime: lastUpdateTime)
+            print(#function, lastUpdateTime)
         }
         print(#function, location)
     }
@@ -163,7 +203,9 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         let err = CLError.Code(rawValue: (error as NSError).code)!
         switch err {
         case .locationUnknown:
-            locationManager.startUpdatingLocation()
+            if locperm && indates {
+                locationManager.startUpdatingLocation()
+            }
      default:
             print(err)
         }
