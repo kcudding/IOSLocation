@@ -25,7 +25,7 @@
 		3B9162BC2926D2E600B04B9F /* EULA.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = EULA.md; sourceTree = "<group>"; };
 		3BCDAEEE29315AD700A8EC08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Downloads/AppIcons(1)/Assets.xcassets"; sourceTree = "<group>"; };
 		A202EB8B2894F95E00E27F5D /* loctrackios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loctrackios.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A202EB8E2894F95E00E27F5D /* loctrackiosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loctrackiosApp.swift; sourceTree = "<group>"; };
+		A202EB8E2894F95E00E27F5D /* loctrackiosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loctrackiosApp.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		A202EB902894F95E00E27F5D /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		A202EB952894F95E00E27F5D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A202EB9C289501AC00E27F5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -286,15 +286,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"loctrackios/Preview Content\"";
-				DEVELOPMENT_TEAM = JU6B7PF6QP;
+				DEVELOPMENT_TEAM = DQ62QMNDRW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = loctrackios/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PeerLearn;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app tracks location for a fixed period of time, in order to simulate disease dynamics for a teaching exercise";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app tracks location for a fixed period of time, in order to simulate disease dynamics for a teaching exercise";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app tracks location for a fixed period of time, in order to simulate disease dynamics for a teaching exercise";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -306,8 +309,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = uw.loctrackios;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.ecotheoryapps.peerlearnlocate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,15 +323,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"loctrackios/Preview Content\"";
-				DEVELOPMENT_TEAM = JU6B7PF6QP;
+				DEVELOPMENT_TEAM = DQ62QMNDRW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = loctrackios/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PeerLearn;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app tracks location for a fixed period of time, in order to simulate disease dynamics for a teaching exercise";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app tracks location for a fixed period of time, in order to simulate disease dynamics for a teaching exercise";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app tracks location for a fixed period of time, in order to simulate disease dynamics for a teaching exercise";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -339,8 +346,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = uw.loctrackios;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.ecotheoryapps.peerlearnlocate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

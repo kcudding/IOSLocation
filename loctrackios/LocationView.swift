@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  loctrackios
 //
-//
+// EcoTheoryApps Inc 14.08.23
 
 import SwiftUI
 
@@ -15,11 +15,6 @@ struct LocationView: View {
     @AppStorage("privagree") private var privagree = false
     @AppStorage("showFirstView") private var showFirstView = true
     @AppStorage("Trackok") private var Trackok = false
-   
-    
-    
-    @State var flag = true
-    @State var ag3 = false
     @State var errortext = ""
     
     var body: some View {
@@ -46,42 +41,47 @@ struct LocationView: View {
         var body: some View {
             VStack{
                 ScrollView {
-                    let filepath = Bundle.main.url(forResource: "EULA", withExtension: "md")
-                    // Show the markdown.
                     
-                    let eu = try! AttributedString(contentsOf: filepath!, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace))
-                    Text("End user agreemnent")
-                        .fontWeight(.bold)
-                        .font(.title)
-                    Text(eu)
-                        .fixedSize(horizontal: false, vertical: true)
+                    VStack{
+                        let filepath = Bundle.main.url(forResource: "EULA", withExtension: "md")
+                        // Show the markdown.
+                        
+                        let eu = try! AttributedString(contentsOf: filepath!, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace))
+                        Text("End user agreement")
+                            .fontWeight(.bold)
+                            .font(.title)
+                        Text(eu)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }.padding()
                 }
-                Button {
-                    euagree = true
-                    
-                } label: {
-                    Text("I agree")
-                }
-                
-                Button {
-                    showingPopover = true
-                } label: {
-                    Text("I do not agree")
-                }
-                .popover(isPresented: self.$showingPopover, arrowEdge: .bottom) {
-                    Text("You may not use this app without agreeing")
-                        .font(.headline)
-                        .padding()
+                    Button {
+                        euagree = true
+                        
+                    } label: {
+                        Text("I agree")
+                    }
                     
                     Button {
-                        showingPopover = false
+                        showingPopover = true
                     } label: {
-                        Text("I understand")
+                        Text("I do not agree")
+                    }
+                    .popover(isPresented: self.$showingPopover, arrowEdge: .bottom) {
+                        Text("You may not use this app without agreeing")
+                            .font(.headline)
+                            .padding()
+                        
+                        Button {
+                            showingPopover = false
+                        } label: {
+                            Text("I understand")
+                        }
                     }
                 }
             }
-        }
-    }
+       }
+    
+        
     
     struct privView: View {
         
@@ -100,7 +100,7 @@ struct LocationView: View {
                     ScrollView{
                         Text(priv)
                             .fixedSize(horizontal: false, vertical: true)
-                    }
+                    }.padding()
                 }
                 Button {
                     privagree = true
@@ -143,7 +143,7 @@ struct TrackView: View {
                     .font(Font.largeTitle.weight(.bold))
                     .padding()
                 ScrollView {
-                    Text("This app will run in the background to track location automatically between November and December to provide data for a teaching activity. Your identity will not be recorded and all data will be password protected.\n\nThe location data will be used to simulate disease dynamics, which advanced students will analyze and model. They will present their findings and explain the models to the early year undergrads who provide the data. This peer learning exercise is designed to increase your understanding of quantitative methods.\n\nYou may discontinue location tracking at any time in the App settings. If at any time you wish your data to be deleted please contact us directly at the link below.\n\nTo participate, please select 'Allow when using the app' in the popup request for location access. Later, when prompted, select Always allow' to run the app in the background")
+                    Text("This app will run in the background to track location automatically for 4-6 weeks in October and November to provide data for a peer learning teaching activity. At the end of this period the app will stop tracking. Your identity will not be recorded and all data will be password protected.\n\nTo participate, please select **'Allow when using the app'** in the popup request for location access. Sometime later you will be prompted again for location access, please select **'Always allow'** in the popup or settings to continue to run the app in the background\n\nThe location data will be used to simulate disease dynamics, which advanced students will analyze and model. They will present their findings and explain the models to the early year undergrads who provide the data. This peer learning exercise is designed to increase your understanding of quantitative methods.\n\nYou may discontinue location tracking at any time in the App settings. If at any time you wish your data to be deleted please contact us directly at the link below.")
                         .padding()
                         .fixedSize(horizontal: false, vertical: true)
                 }
@@ -228,15 +228,7 @@ struct AppTrackView: View {
     
     var body: some View {
         
-        
-        
-        //    if !locperm {
-        //        locationManager.requestPermission()
-        //     if locationManager.authorizationStatus == .authorizedAlways {
-        //           if (locationManager.statusString == ".authorizedAlways") {
-        //           locperm = true
-        //       }
-        //   }
+
         
         return ZStack {
             
@@ -263,7 +255,7 @@ struct AppTrackView: View {
                         .padding()
                         .border(Color.purple, width: 5)
                     Text("location status: \(locationManager.statusString)")
-                    // Text(locationManager.locperm ? "Yes" : "No")
+                    
                 } else if !locationManager.locperm {
                     Text("location status: \(locationManager.statusString)")
                     Text("Waiting for permissions")
@@ -274,14 +266,7 @@ struct AppTrackView: View {
                         .border(Color.purple, width: 5)
                 }
                 
-                
-                
-                //   Text("location status: \(locationManager.statusString)")
-                //    Text("latitude: \(locationManager.userLatitude)")
-                //  Text("longitude: \(locationManager.userLongitude)")
-                //Text("altitude: \(locationManager.userAltitude)")
-                
-                //.disabled(uuid != nil)
+
                 Text("uuid: \(uuid ?? "not set")")
                 
                 Spacer()

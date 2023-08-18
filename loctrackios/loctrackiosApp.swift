@@ -2,8 +2,7 @@
 //  loctrackiosApp.swift
 //  loctrackios
 //
-//  Created by thaqib on 2022-07-30.
-//
+//  EcoTheoryApps Inc 14.08.23
 
 import SwiftUI
 
